@@ -100,9 +100,17 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <excludeDevtools>false</excludeDevtools>
-          <mainClass>pe.softweb.Application</mainClass>
+            <fork>true</fork>
+            <excludeDevtools>false</excludeDevtools>
+            <mainClass>${start-class}</mainClass>
         </configuration>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>repackage</goal>
+                </goals>
+            </execution>
+        </executions>
       </plugin>
       <!-- Models instrumentation - JavaLite -->
       <plugin>
